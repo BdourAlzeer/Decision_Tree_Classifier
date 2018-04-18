@@ -14,50 +14,7 @@ all_data = list(input_file)
 
 #DataPreprocessing
 #Hybraid Data Preprocessing
-def DicreteVariablesToBoolean(filename):
-    data = pd.read_csv(filename)
-    country_code = {'CAN':[],'EURO':[],'USA':[]}
-    position = {'R': [], 'C': [], 'L': [],'D':[]}
-    for e in data['country_group']:
-        if e == 'CAN':
-            country_code['CAN'].append(1)
-        else:
-            country_code['CAN'].append(0)
-        if e == 'USA':
-            country_code['USA'].append(1)
-        else:
-            country_code['USA'].append(0)
-        if e == 'EURO':
-            country_code['EURO'].append(1)
-        else:
-            country_code['EURO'].append(0)
-    for e in data['Position']:
-        if e == 'C':
-            position['C'].append(1)
-        else:
-            position['C'].append(0)
-        if e == 'R':
-            position['R'].append(1)
-        else:
-            position['R'].append(0)
-        if e == 'L':
-            position['L'].append(1)
-        else:
-            position['L'].append(0)
-        if e == 'D':
-            position['D'].append(1)
-        else:
-            position['D'].append(0)
-    data['CAN']=country_code['CAN']
-    data['EURO'] = country_code['EURO']
-    data['USA'] = country_code['USA']
-    data['R'] = position['R']
-    data['L'] = position['L']
-    data['C'] = position['C']
-    data['D'] = position['D']
-    del data['country_group']
-    del data['Position']
-    return data
+//////////////////////////
 
 
 #Create your Features "x" and Target Values "targets" here from dataset
